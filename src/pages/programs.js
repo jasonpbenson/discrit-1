@@ -4,6 +4,6 @@ import { SEO, Nav } from "../components"
 export default () => (
   <>
     <Nav links={['', 'Programs', 'Resources', 'Contact']} />
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Programs" keywords={[`gatsby`, `application`, `react`]} />
   </>
 )
