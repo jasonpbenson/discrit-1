@@ -9,6 +9,11 @@ export default props => {
         <Link
           className="link"
           key={i}
+          style={{
+            opacity: props.isLoaded ? 1 : 0,
+            transform: props.isLoaded ? 'translateY(0)' : 'translateY(1em)',
+            transitionDelay: `.${i*2}s`,
+          }}
           to={`/${el.toLowerCase()}`}>
           {el === '' ? 'Home' : el}
         </Link>)
