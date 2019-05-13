@@ -3,7 +3,7 @@ import { SEO, Nav } from "../components"
 
 export default () => (
   <>
-    <Nav links={['', 'Programs', 'Resources', 'Contact']} isLoaded={true}/>
+    <Nav active="Resources" links={['', 'Programs', 'Resources', 'Contact']} isLoaded={true}/>
     <SEO title="Resources" keywords={[`gatsby`, `application`, `react`]} />
   </>
 )

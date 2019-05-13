@@ -3,10 +3,19 @@ import { Link } from 'gatsby'
 import './Nav.scss'
 
 export default props => {
-  
-  // remove transition-delay after the animation completes
-  const [doneAnimating, setDoneAnimating] = useState(false)
-  setTimeout(() => setDoneAnimating(true), 800)
+  //animate only on entering the website for the first time
+  const [firstLoad, setFirstLoad] = useState(sessionStorage.getItem('firstLoad'))
+  const [doneAnimating, setDoneAnimating] = useState(firstLoad ? true : false)
+
+  if(!firstLoad) {
+    setTimeout(() => {
+      sessionStorage.setItem('firstLoad', true)
+      setFirstLoad(sessionStorage.getItem('firstLoad'))
+    }, 100)
+    // remove transition-delay after the animation completes
+    // time is set by number of links
+    setTimeout(() => setDoneAnimating(true), props.links.length * 200)
+  }
 
   return (
     <div className="Nav">
@@ -15,8 +24,9 @@ export default props => {
           className="link"
           key={i}
           style={{
-            opacity: props.isLoaded ? 1 : 0,
-            transform: props.isLoaded ? 'translateY(0)' : 'translateY(1em)',
+            textDecoration: props.active === el ? 'underline' : 'none',
+            opacity: firstLoad ? 1 : 0,
+            transform: firstLoad ? 'translateY(0)' : 'translateY(1em)',
             transitionDelay: doneAnimating ? '0s' : `.${i * 2}s`,
           }}
           to={`/${el.toLowerCase()}`}>
