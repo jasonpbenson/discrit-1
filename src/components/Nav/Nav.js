@@ -4,13 +4,13 @@ import './Nav.scss'
 
 export default props => {
   //animate only on entering the website for the first time
-  const [firstLoad, setFirstLoad] = useState(sessionStorage.getItem('firstLoad'))
+  const [firstLoad, setFirstLoad] = useState(window.sessionStorage.getItem('firstLoad'))
   const [doneAnimating, setDoneAnimating] = useState(firstLoad ? true : false)
 
   if(!firstLoad) {
     setTimeout(() => {
-      sessionStorage.setItem('firstLoad', true)
-      setFirstLoad(sessionStorage.getItem('firstLoad'))
+      window.sessionStorage.setItem('firstLoad', true)
+      setFirstLoad(window.sessionStorage.getItem('firstLoad'))
     }, 100)
     // remove transition-delay after the animation completes
     // time is set by number of links
