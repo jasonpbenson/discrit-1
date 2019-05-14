@@ -3,15 +3,25 @@ import { Link } from 'gatsby'
 import './Nav.scss'
 
 export default props => {
-  //animate only on entering the website for the first time
+
   // * handle gatsby build unrecognizing sessionStorage
-  const [firstLoad, setFirstLoad] = useState(sessionStorage.getItem('firstLoad') || null)
+  let sessionLoad
+  if (sessionStorage) sessionLoad = sessionStorage.getItem('firstLoad')
+  else sessionLoad = null
+
+  //animate only on entering the website for the first time
+  const [firstLoad, setFirstLoad] = useState(sessionLoad)
   const [doneAnimating, setDoneAnimating] = useState(firstLoad ? true : false)
 
-  if(!firstLoad) {
+  if (!firstLoad) {
     setTimeout(() => {
-      if (sessionStorage) sessionStorage.setItem('firstLoad', true)
-      setFirstLoad(sessionStorage.getItem('firstLoad') || true)
+      if (sessionStorage) {
+        sessionStorage.setItem('firstLoad', true)
+        setFirstLoad(sessionStorage.getItem('firstLoad'))
+      } else {
+        sessionLoad = true
+        setFirstLoad(sessionLoad)
+      }
     }, 100)
     // remove transition-delay after the animation completes
     // time is set by number of links
