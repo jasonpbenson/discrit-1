@@ -7,7 +7,7 @@ import program4 from '../images/program4.jpg'
 
 export default () => (
   <div className="Programs">
-    <Nav active="Programs" links={['', 'Programs', 'Resources', 'Contact']} isLoaded={true}/>
+    <Nav active="Programs" links={['Home', 'Programs', 'Resources', 'Contact']} isLoaded={true}/>
     <SEO title="Programs" keywords={[`gatsby`, `application`, `react`]} />
     <img src={program1} alt="ok" />
     Curatorial roundtable (Atlanta Contemporary, Atlanta, 2019)
