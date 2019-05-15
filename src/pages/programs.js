@@ -26,6 +26,15 @@ export default () => (
 
     All graphics by Chris Fernald. Photography by Kasey Medlin.
     <img src={program4} alt="ok" />
-    Discrit: Season One Art Theory Discussion Group (Murmur Media, Atlanta, 2018)
+    Discrit: Season One Art Theory Discussion Group (Murmur Media, Atlanta, 2018)<br/>
+    Discrit Season One was a free art theory class and discussion group that ran across seven sessions from February 2018 to May 2018, concluding with a public screening and discussion of 'What the Heart Wants' by Cécile B. Evans. 
+
+    The Discrit Reader No. 1, attached below, provides an overview of the initiative, along with the curriculum for Season One. To listen in on some of our discussions, please refer to the audio recordings of Sessions One and Four below. 
+
+    Selected Audio:
+    1.1 Laying Out Conditions: Art + Agency in the Age of the Internet
+    https://www.dropbox.com/s/1m3lb2yc8rki46d/Discrit%201.1%20Art%20%2B%20Agency%20in%20the%20Age%20of%20the%20Internet.m4a?dl=0
+    1.4 Cyberfeminism + Technofeminism 
+    https://www.dropbox.com/s/f35abnailimhh09/Discrit%201.4%20Cyberfeminism%20%2B%20Technofeminism.m4a?dl=0
   </div>
 )
