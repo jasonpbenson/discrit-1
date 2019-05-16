@@ -1,3 +1,11 @@
 html {
   font-family: arial, sans-serif;
 }
+
+.Programs {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 300px;
+  }
+}
